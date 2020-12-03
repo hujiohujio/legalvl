@@ -31,7 +31,7 @@
               <% else %>
                 <%= link_to "Serch", root_path, class: "nav-link text-success" %>
                 <%= link_to "Login", root_path, class: "nav-link text-success" %>
-                <%= link_to "新規登録", root_path, class: "nav-link text-success" %>
+                <%= link_to "新規登録", new_user_registration_path, class: "nav-link text-success" %>
               <% end %>
             </div>
           </div>
@@ -39,7 +39,10 @@
     </header>
     <%= yield %>
     <footer class="footer">
-      <div class="teck">文言</div>
+      <div>文言</div>
     </footer>
+    <div class="huifont">
+      真面目
+    </div>
   </body>
 </html>
