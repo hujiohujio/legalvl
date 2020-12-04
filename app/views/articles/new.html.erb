@@ -1,0 +1,25 @@
+<%= form_with model:@article, url: new_article_path, local: true do |f|%>
+  <div class="tag-field", id='tag-field'>
+    <%= f.label :subj, "科目" %><br />
+    <%= f.text_field :subj %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title, "論点" %><br />
+    <%= f.text_area :title, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :text, "考察" %><br />
+    <%= f.text_area :concept, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "画像" %><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
