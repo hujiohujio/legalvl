@@ -42,9 +42,6 @@
 | Column             | Type                | Options                           |
 |--------------------|---------------------|-----------------------------------|
 | user               | references          | null: false, foreign_key: true    |
-| constitution       | references          | foreign_key: true                 |
-| civil              | references          | foreign_key: true                 |
-| criminal           | references          | foreign_key: true                 |
 
 
 ### Association
