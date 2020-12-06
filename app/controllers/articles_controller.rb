@@ -4,11 +4,12 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = ArticleTag.new
+    @article = ArticleTagTable.new
   end
 
   def create
-    @article = ArticleTag.new(article_params)
+    @article = ArticleTagTable.new(article_params)
+ 
     if @article.valid?
        @article.save
       #  保存先の科目のページに行くようにしたい
@@ -21,7 +22,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article_tag).permit(:text, :title, :subj).merge(user_id: current_user.id)
+    params.require(:article_tag_table).permit(:text, :title, :subj).merge(user_id: current_user.id)
   end
 
 

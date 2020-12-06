@@ -1,4 +1,4 @@
-class TweetsTag
+class ArticleTagTable
 
   include ActiveModel::Model
   attr_accessor :user_id, :text, :title, :subj
@@ -12,7 +12,6 @@ class TweetsTag
   def save
     article = Article.create(user_id: user_id, text: text, title: title)
     tag = Tag.create(user_id: user_id, subj: subj)
-
     ArticleTag.create(article_id: article.id, tag_id: tag.id)
   end
 

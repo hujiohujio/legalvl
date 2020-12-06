@@ -13,18 +13,14 @@
         <%# モデルに投稿があった場合に新しい順に並べる記述 %>
           <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
             <div class="row text-break">
+              <% @articles.each do |article| %>
                 <div class="px-3 col-md-3">
-                    <%= link_to image_tag("staff1.jpg", class: "rounded-circle img-fluid", size: '130x50'), "#" %>
-                    <h3>sampletextttttttttttttttttttttyyyyyyyyyyyyyyyyyyyyyyyyyy</h1>
+                    <%= link_to image_tag("star.png", class: "rounded-circle img-fluid", size: '130x50'), "#" %>
+                    <h5 class="item-title">
+                      <%= article.title %>
+                    </h5>
                 </div>
-                <div class="px-3 col-md-3">
-                    <%= link_to image_tag("staff1.jpg", class: "rounded-circle img-fluid", size: '130x50'), "#" %>
-                    <h3>sampletext</h1>
-                </div>
-                <div class="px-3 col-md-3">
-                    <%= link_to image_tag("staff1.jpg", class: "rounded-circle img-fluid", size: '130x50'), "#" %>
-                    <h3>sampletext</h1>
-                </div>
+              <% end %>
             </div>
           </div>
           <div class="tab-pane fade" id="list-constitution" role="tabpanel" aria-labelledby="list-profile-list">
