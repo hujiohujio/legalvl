@@ -1,4 +1,10 @@
-.table
+.no-underline{
+  text-decoration:none !important;
+}
+.edit-btn{
+  color:white;
+  
+}
 
 .table-col1 {
   width: 30%;
