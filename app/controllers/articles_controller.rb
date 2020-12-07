@@ -9,7 +9,6 @@ class ArticlesController < ApplicationController
 
   def create
     @article = ArticleTagTable.new(article_params)
- 
     if @article.valid?
        @article.save
       #  保存先の科目のページに行くようにしたい
@@ -18,6 +17,8 @@ class ArticlesController < ApplicationController
        render "new"
     end
   end
+
+
 
   private
 
