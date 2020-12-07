@@ -1,0 +1,28 @@
+<div class="col-sm-9 container justify-content-center">
+      <h2 class="text-center my-5">
+        <%= "#{@user.nickname}" %>
+      </h2>
+      <table class="table">
+        <tbody>
+          <div class="text-center my-5">
+            <%= image_tag "star.png", class: "rounded-circle img-fluid", size: '130x50' %>
+          </div>
+          <tr>
+            <th class="table-col1">名前</th>
+            <td class="table-col2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table-col1">プロフィール</th>
+            <td class="table-col2"><%= @user.profile %></td>
+          </tr>
+          <tr>
+            <th class="table-col1">得意科目</th>
+            <td class="table-col2"><%= @user.fav_subj %></td>
+          </tr>
+          <tr>
+            <th class="table-col1">苦手科目</th>
+            <td class="table-col2"><%= @user.weak_subj %></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
