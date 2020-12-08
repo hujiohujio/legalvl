@@ -1,9 +1,11 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3">
-      <%= render partial: 'users/profile', locals: { user: @article.user} %>
-    </div>
-    <div class="col-md-9">
+    <% if current_user != @article.user %>
+      <div class="col-md-2">
+        <%= render partial: 'users/profile', locals: { user: @article.user} %>
+      </div>
+    <% end %>
+    <div class="col-md-7">
       <div class="media">
         <div class="media-body">
           <div class="text-center">
@@ -20,6 +22,9 @@
           </p>
         </div>
       </div>
+    </div>
+    <div class="col">
+      <%= render partial: 'messages/message_page', locals: { article: @article, message: @message } %>
     </div>
   </div>
 </div>
