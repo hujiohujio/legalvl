@@ -5,8 +5,6 @@ class MessagesController < ApplicationController
     @message = @article.messages.new(message_params)
     if @message.save
       redirect_to article_path(@article.id)
-    else
-      render rood_path
     end
   end
 end
