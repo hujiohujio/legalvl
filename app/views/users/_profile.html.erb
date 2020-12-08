@@ -4,7 +4,7 @@
   <table class="table">
     <tbody>
       <div class="text-center my-5">
-        <%= image_tag "star.png", class: "rounded-circle img-fluid", size: '80x30' %>
+        <%= link_to image_tag("star.png", class: "rounded-circle img-fluid", size: '80x30'), user_path(user.id) %>
       </div>
       <tr>
         <th class="table-col1">名前</th>

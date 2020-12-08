@@ -23,7 +23,7 @@
 
 | Column                 | Type                    | Options                           |
 |------------------------|-------------------------|----- -----------------------------|
-| text                   | text                    | null: false                       |
+| content                   | text                    | null: false                       |
 | user                   | references              | null: false, foreign_key: true    |
 | constitution           | references              | null: false, foreign_key: true    |
 | civil                  | references              | null: false, foreign_key: true    |
