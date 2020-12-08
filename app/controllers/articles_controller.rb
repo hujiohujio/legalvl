@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all.order('created_at DESC').includes(:user)
-    
   end
 
   def new
@@ -17,6 +16,10 @@ class ArticlesController < ApplicationController
     else
        render "new"
     end
+  end
+
+  def show
+    @article = Article.find(params[:id])
   end
 
 

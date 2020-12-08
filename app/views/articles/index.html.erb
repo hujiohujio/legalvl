@@ -28,13 +28,17 @@
           <div class="row text-break">
             <% if Article.present? %>
               <% Tag.where(subj: "憲法").order('created_at DESC').each do |tag| %>
-                <div class="px-3 col-md-3">
-                  <%= link_to image_tag("star.png", class: "rounded-circle img-fluid", size: '130x50'), "#" %>
-                  <h5 class="item-title">
+                <div class="px-3 col-md-4 text-center">
                     <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
-                      <%= article_tag.article.title %>
+                      <%= link_to (article_path(article_tag.article.id)) do %>
+                        <%= image_tag("star.png", class: "rounded-circle img-fluid", size: '130x50') %>
+                        <div class="card">
+                          <div class="card-body bg-light text-dark">
+                            <%= article_tag.article.title %>
+                          </div>
+                        </div>
+                      <% end %>
                     <% end %>
-                  </h5>
                 </div>
               <% end %>
             <% end %>
@@ -44,13 +48,17 @@
           <div class="row text-break">
             <% if Article.present? %>
               <% Tag.where(subj: "民法").order('created_at DESC').each do |tag| %>
-                <div class="px-3 col-md-3">
-                  <%= link_to image_tag("star.png", class: "rounded-circle img-fluid", size: '130x50'), "#" %>
-                  <h5 class="item-title">
+                <div class="px-3 col-md-4 text-center">
                     <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
-                      <%= article_tag.article.title %>
+                      <%= link_to (article_path(article_tag.article.id)) do %>
+                        <%= image_tag("star.png", class: "rounded-circle img-fluid", size: '130x50') %>
+                        <div class="card">
+                          <div class="card-body bg-light text-dark">
+                            <%= article_tag.article.title %>
+                          </div>
+                        </div>
+                      <% end %>
                     <% end %>
-                  </h5>
                 </div>
               <% end %>
             <% end %>
@@ -60,13 +68,17 @@
           <div class="row text-break">
             <% if Article.present? %>
               <% Tag.where(subj: "刑法").order('created_at DESC').each do |tag| %>
-                <div class="px-3 col-md-3">
-                  <%= link_to image_tag("star.png", class: "rounded-circle img-fluid", size: '130x50'), "#" %>
-                  <h5 class="item-title">
+                <div class="px-3 col-md-4 text-center">
                     <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
-                      <%= article_tag.article.title %>
+                      <%= link_to (article_path(article_tag.article.id)) do %>
+                        <%= image_tag("star.png", class: "rounded-circle img-fluid", size: '130x50') %>
+                        <div class="card">
+                          <div class="card-body bg-light text-dark">
+                            <%= article_tag.article.title %>
+                          </div>
+                        </div>
+                      <% end %>
                     <% end %>
-                  </h5>
                 </div>
               <% end %>
             <% end %>
