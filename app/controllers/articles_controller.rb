@@ -20,8 +20,12 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    gon.article = @article
     @message = Message.new
-    @messages = @article.messages.includes(:user)
+    @messages = @article.messages.order('created_at DESC').includes(:user)
+    gon.user = current_user.nickname
+    @message_time = Message.find(params[:id]).created_at
+    gon.time = @message_time
   end
 
 

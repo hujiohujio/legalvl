@@ -1,17 +1,14 @@
-  <h2 class="text-center my-5">
-    <%= "#{user.nickname}" %>
-  </h2>
   <table class="table">
     <tbody>
       <div class="text-center my-5">
         <%= link_to image_tag("star.png", class: "rounded-circle img-fluid", size: '80x30'), user_path(user.id) %>
       </div>
       <tr>
-        <th class="table-col1">名前</th>
+        <th class="table-col1">NickName</th>
         <td class="table-col2"><%= user.nickname %></td>
       </tr>
       <tr>
-        <th class="table-col1">プロフィール</th>
+        <th class="table-col1">Profile</th>
         <td class="table-col2"><%= user.profile %></td>
       </tr>
       <tr>
