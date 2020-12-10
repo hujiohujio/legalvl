@@ -26,6 +26,7 @@ class ArticlesController < ApplicationController
     gon.user = current_user.nickname
     @message_time = Message.find(params[:id]).created_at
     gon.time = @message_time
+    
   end
 
 

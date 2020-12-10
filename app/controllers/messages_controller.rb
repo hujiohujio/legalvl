@@ -6,7 +6,6 @@ class MessagesController < ApplicationController
     if @message.save
       # redirect_to article_path(@article.id)
       render json: {message: @message}
-
     end
   end
 end
