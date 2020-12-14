@@ -1,10 +1,10 @@
 <div class="container-fluid article-show">
   <div class="row">
-    <% if current_user != @article.user %>
+    <%# if current_user != @article.user %>
       <div class="col-md-2">
         <%= render partial: 'users/profile', locals: { user: @article.user} %>
       </div>
-    <% end %>
+    <%# end %>
     <div class="col-md-7">
       <div class="media">
         <div class="media-body">
@@ -22,9 +22,15 @@
           </p>
         </div>
       </div>
+      <div class="text-center">
+        <%= link_to '削除', article_path, method: :delete, class:'item-destroy' %>
+      </div>
     </div>
+    <% if user_signed_in? %>
     <div class="col">
       <%= render partial: 'messages/message_page', locals: { article: @article, message: @message } %>
     </div>
+    <% end %>
+
   </div>
 </div>

@@ -1,17 +1,19 @@
-<div class="col-sm-9 container justify-content-center text-break">
-  <%= render partial: 'profile', locals: { user: @user } %>
-  <div class="text-center">
-    <% if user_signed_in? && current_user == @user %>
-      <%= link_to (edit_user_path) do %>  
-        <button class="px-5 m-3 btn btn-primary btn-lg">
-          Edit
-        </button>
+<div class="article-show">
+  <div class="col-sm-9 container justify-content-center text-break">
+    <%= render partial: 'profile', locals: { user: @user } %>
+    <div class="text-center">
+      <% if user_signed_in? && current_user == @user %>
+        <%= link_to (edit_user_path) do %>  
+          <button class="px-5 m-3 btn btn-primary btn-lg">
+            Edit
+          </button>
+        <% end %>
       <% end %>
-    <% end %>
-      <%= link_to (root_path) do %>  
-        <button class="px-5 m-3 btn btn-primary btn-lg">
-          Back
-        </button>
-      <% end %>
+        <%= link_to (root_path) do %>  
+          <button class="px-5 m-3 btn btn-primary btn-lg">
+            Back
+          </button>
+        <% end %>
+    </div>
   </div>
 </div>

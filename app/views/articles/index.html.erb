@@ -1,24 +1,31 @@
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: #99FFCC">
   <div class="row">
-    <div class="col-2 px-0">
-      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">憲法</a>
-        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">民法</a>
-        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">刑法</a>
+    <div class="col-2 px-0 bg-light">
+      <div class="nav flex-column nav-pills bg-warning border" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active border" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+        <a class="nav-link border" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">憲法</a>
+        <a class="nav-link border" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">民法</a>
+        <a class="nav-link border" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">刑法</a>
       </div>
     </div>
     <div class="col-10">
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+          <div class="text-center">
+            <h3 class="title my-4">新着投稿</h3>
+          </div>
           <div class="row text-break">
             <% if Article.present? %>
               <% @articles.each do |article| %>
                 <div class="px-3 col-md-3">
-                    <%= link_to image_tag("star.png", class: "rounded-circle img-fluid", size: '130x50'), "#" %>
-                    <h5 class="item-title">
-                      <%= article.title %>
-                    </h5>
+                    <%= link_to (article_path(article.id)) do %>
+                        <%= image_tag("dog.png", class: "rounded-circle img-fluid", size: '130x50') %>
+                        <div class="card">
+                          <div class="card-body bg-light">
+                            <%= article.title %>
+                          </div>
+                        </div>
+                      <% end %>
                 </div>
               <% end %>
             <% end %>
@@ -31,7 +38,7 @@
                 <div class="px-3 col-md-4 text-center">
                     <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
                       <%= link_to (article_path(article_tag.article.id)) do %>
-                        <%= image_tag("star.png", class: "rounded-circle img-fluid", size: '130x50') %>
+                        <%= image_tag("dog.png", class: "rounded-circle img-fluid", size: '130x50') %>
                         <div class="card">
                           <div class="card-body bg-light text-dark">
                             <%= article_tag.article.title %>
@@ -51,7 +58,7 @@
                 <div class="px-3 col-md-4 text-center">
                     <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
                       <%= link_to (article_path(article_tag.article.id)) do %>
-                        <%= image_tag("star.png", class: "rounded-circle img-fluid", size: '130x50') %>
+                        <%= image_tag("dog.png", class: "rounded-circle img-fluid", size: '130x50') %>
                         <div class="card">
                           <div class="card-body bg-light text-dark">
                             <%= article_tag.article.title %>
@@ -71,7 +78,7 @@
                 <div class="px-3 col-md-4 text-center">
                     <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
                       <%= link_to (article_path(article_tag.article.id)) do %>
-                        <%= image_tag("star.png", class: "rounded-circle img-fluid", size: '130x50') %>
+                        <%= image_tag("dog.png", class: "rounded-circle img-fluid", size: '130x50') %>
                         <div class="card">
                           <div class="card-body bg-light text-dark">
                             <%= article_tag.article.title %>
@@ -88,9 +95,8 @@
     </div>
   </div>
 </div>
-<%= link_to(new_article_path, class: 'purchase-btn') do %>
-  <span class='purchase-btn-text text-dark'>投　稿</span>
-  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<%= link_to(new_article_path, class: 'button') do %>
+  <span class='purchase-btn-text text-light'>投　稿</span>
 <% end %>
 
 

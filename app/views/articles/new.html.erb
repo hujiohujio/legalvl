@@ -1,25 +1,29 @@
-<%= form_with model:@article, url: articles_path, local: true do |f|%>
-  <div class="tag-field", id='tag-field'>
-    <%= f.label :subj, "科目" %><br />
-    <%= f.select :subj, [["憲法", "憲法"], ["民法", "民法"], ["刑法", "刑法"]],include_blank: "選択して下さい" %>
-  </div>
+<div class="container-fluid text-center" style="background-color: #99FFCC">
+  <div>
+    <%= form_with model:@article, url: articles_path, local: true do |f|%>
+      <div class="tag-field", id='tag-field'>
+        <%= f.label :subj, "科目" %><br />
+        <%= f.select :subj, [["憲法", "憲法"], ["民法", "民法"], ["刑法", "刑法"]],include_blank: "選択して下さい" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :title, "論点" %><br />
-    <%= f.text_area :title, class: :form__text %>
-  </div>
+      <div class="field">
+        <%= f.label :title, "論点" %><br />
+        <%= f.text_area :title, class: :form__text %>
+      </div>
 
-  <div class="field">
-    <%= f.label :text, "考察" %><br />
-    <%= f.text_area :text, class: :form__text %>
-  </div>
+      <div class="field">
+        <%= f.label :text, "考察" %><br />
+        <%= f.text_area :text, class: :form__text %>
+      </div>
 
-  <div class="field">
-    <%= f.label :image, "画像" %><br />
-    <%= f.file_field :image %>
-  </div>
+      <div class="field">
+        <%= f.label :image, "画像" %><br />
+        <%= f.file_field :image %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "保存する", class: :form__btn  %>
+      <div class="actions">
+        <%= f.submit "保存する", class: :form__btn  %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
