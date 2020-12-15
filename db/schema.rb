@@ -42,10 +42,8 @@ ActiveRecord::Schema.define(version: 2020_12_08_102908) do
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "subj", null: false
-    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_tags_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -69,5 +67,4 @@ ActiveRecord::Schema.define(version: 2020_12_08_102908) do
   add_foreign_key "articles", "users"
   add_foreign_key "messages", "articles"
   add_foreign_key "messages", "users"
-  add_foreign_key "tags", "users"
 end
