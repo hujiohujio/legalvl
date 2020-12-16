@@ -3,8 +3,8 @@ class MessagesController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
     @message = @article.messages.new(message_params)
+    
     if @message.save
-      # redirect_to article_path(@article.id)
       render json: {message: @message}
     end
   end

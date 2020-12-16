@@ -1,4 +1,4 @@
-<div class="container-fluid" style="background-color: #99FFCC">
+<div class="container-fluid vh-100" style="background-color: #99FFCC;">
   <div class="row">
     <div class="col-2 px-0 bg-light">
       <div class="nav flex-column nav-pills bg-warning border" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -18,14 +18,14 @@
             <% if Article.present? %>
               <% @articles.each do |article| %>
                 <div class="px-3 col-md-3">
-                    <%= link_to (article_path(article.id)) do %>
-                        <%= image_tag("dog.png", class: "rounded-circle img-fluid", size: '130x50') %>
-                        <div class="card">
-                          <div class="card-body bg-light">
-                            <%= article.title %>
-                          </div>
-                        </div>
-                      <% end %>
+                  <%= link_to (article_path(article.id)) do %>
+                    <%# <%= image_tag article.user.image.variant(resize: '200x200'), class: "rounded-circle img-fluid" if article.image.attached? %> %>
+                    <div class="card">
+                      <div class="card-body bg-light">
+                        <%= article.title %>
+                      </div>
+                    </div>
+                  <% end %>
                 </div>
               <% end %>
             <% end %>

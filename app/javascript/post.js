@@ -10,13 +10,15 @@ function post (){
       const item = XHR.response.message;
       const contentsArea = document.getElementById("message");
       const articleText = document.getElementById("message_text_field");
+      const date = new Date().toLocaleString({ timeZone: 'Asia/Tokyo' })
+      console.log(date)
       const HTML = `
         <div class="upper-message">
           <div class="message-user">
             ${ gon.user }
           </div>
           <div class="message-date">
-            ${ gon.time }
+            ${ date }
           </div>
         </div>
         <div class="lower-message">
@@ -26,10 +28,8 @@ function post (){
         </div>        
   
       `;
-
       contentsArea.insertAdjacentHTML("afterbegin", HTML);
       articleText.value = "";
-      console.log(contentsArea)
     };
     e.preventDefault();
   });
