@@ -8,18 +8,17 @@
             Edit
           </button>
         <% end %>
-      <% end %>
-        <%= link_to (:back) do %>  
-          <button class="px-5 m-3 btn btn-primary btn-lg">
-            Back
-          </button>
-        <% end %>
         <%= link_to (user_path(current_user.id)), method: :delete do %>  
           <button class="px-5 m-3 btn btn-danger btn-lg">
             Delete
           </button>
         <% end %>
-
+      <% end %>
+      <%= link_to (:back) do %>  
+        <button class="px-5 m-3 btn btn-primary btn-lg">
+          Back
+        </button>
+      <% end %>
     </div>
   </div>
 </div>

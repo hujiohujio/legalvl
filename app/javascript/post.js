@@ -11,7 +11,6 @@ function post (){
       const contentsArea = document.getElementById("message");
       const articleText = document.getElementById("message_text_field");
       const date = new Date().toLocaleString({ timeZone: 'Asia/Tokyo' })
-      console.log(date)
       const HTML = `
         <div class="upper-message">
           <div class="message-user">

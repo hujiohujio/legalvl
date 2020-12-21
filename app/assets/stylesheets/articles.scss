@@ -27,6 +27,7 @@
 
 .article-show {
   background-color: #99FFCC;
+  height: 100vh;
 }
 
 .nav-link {
@@ -39,13 +40,13 @@
 }
 
 
-.item-destroy {
+.article-destroy {
   background-color: lightgray;
   text-align: center;
-  font-size: 24px;
+  font-size: 0.5em;
   color: black;
-  margin: 20px 0px;
-  padding: 20px 20px;
+  margin: 0.8em 0px;
+  padding: 0.8em 20px;
   border-radius: 15px;
 }
 

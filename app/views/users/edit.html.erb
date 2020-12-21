@@ -6,9 +6,12 @@
     <table class="table text-break">
       <tbody>
         <div class="text-center my-5">
-          <%= image_tag "dog.png", class: "rounded-circle img-fluid", size: '130x50' %>
-          <%#= f.file_field :image %>
+          <%= image_tag(@user.image.variant(resize: '200x200'), class: "rounded-circle img-fluid") if @user.image.attached? %>
         </div>
+        <tr>
+          <th class="table-col1">アイコン画像</th>
+          <td class="table-col2"><%= f.file_field :image %></td>
+        </tr>
         <tr>
           <th class="table-col1">名前</th>
           <td class="table-col2"><%= f.text_field :nickname %></td>

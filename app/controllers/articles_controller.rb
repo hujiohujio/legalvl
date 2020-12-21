@@ -23,7 +23,9 @@ class ArticlesController < ApplicationController
     gon.article = @article
     @message = Message.new
     @messages = @article.messages.order('created_at DESC').includes(:user)
-    gon.user = current_user.nickname
+    if user_signed_in?
+      gon.user = current_user.nickname
+    end
   end
 
   def destroy

@@ -1,11 +1,11 @@
 <div class="container-fluid article-show">
   <div class="row">
-    <%# if current_user != @article.user %>
-      <div class="col-md-2">
+    <% if current_user != @article.user %>
+      <div class="col-md-3">
         <%= render partial: 'users/profile', locals: { user: @article.user} %>
       </div>
-    <%# end %>
-    <div class="col-md-7">
+    <% end %>
+    <div class="col-md-6 pb-3">
       <div class="media">
         <div class="media-body">
           <div class="text-center">
@@ -20,17 +20,15 @@
           <p class="bg-light p-3 rounded">
             <%= @article.text %>
           </p>
+          <div class="text-center ">
+            <%= link_to '削除', article_path, method: :delete, class:'article-destroy' %>
+          </div>
         </div>
       </div>
-      <div class="text-center">
-        <%= link_to '削除', article_path, method: :delete, class:'item-destroy' %>
-      </div>
     </div>
-    <% if user_signed_in? %>
     <div class="col">
       <%= render partial: 'messages/message_page', locals: { article: @article, message: @message } %>
     </div>
-    <% end %>
 
   </div>
 </div>
