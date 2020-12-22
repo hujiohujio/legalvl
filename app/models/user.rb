@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_one_attached :image, dependent: :destroy
   
-  validates :nickname, presence: true
+  validates :nickname, :image, presence: true
 
 end

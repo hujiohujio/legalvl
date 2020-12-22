@@ -1,51 +1,48 @@
-<div class="main">
-      <h2 class="page-heading">ユーザー新規登録</h2>
+<div class="contents row">
+  <div class="container">
+      <h2>ユーザー新規登録</h2>
+        <%= form_with model: @user, url: user_registration_path, class: "new_user", local: true do |f| %>
+          <%= devise_error_messages!%>
+          <div>
+            <%= f.label :image, "アイコン画像" %><br />
+            <%= f.file_field :image %>
+          </div>
+          <div class="form-group">
+            <%= f.label :email, "メールアドレス" %><br />
+            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+          </div>
 
-      <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
-        <%= devise_error_messages!%>
-        <div class="field">
-          <%= f.label :image, "アイコン画像" %><br />
-          <%= f.file_field :image %>
-        </div>
-        <div class="field">
-          <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
+          <div class="form-group">
+            <%= f.label :password, "パスワード（6文字以上）" %><br />
+            <%= f.password_field :password, class: "form-control" %>
+          </div>
 
-        <div class="field">
-          <%= f.label :password, "パスワード（6文字以上）" %><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
-        </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation, "パスワード再入力" %><br />
+            <%= f.password_field :password_confirmation, class: "form-control" %>
+          </div>
 
-        <div class="field">
-          <%= f.label :password_confirmation, "パスワード再入力" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-        </div>
+          <div class="form-group">
+            <%= f.label :nickname, "ニックネーム" %><br />
+            <%= f.text_field :nickname, class: "form-control" %>
+          </div>
 
-        <div class="field">
-          <%= f.label :nickname, "ニックネーム" %><br />
-          <%= f.text_field :nickname %>
-        </div>
+          <div class="form-group">
+            <%= f.label :profile, "プロフィール" %><br />
+            <%= f.text_area :profile, class: "form-control" %>
+          </div>
 
-        <div class="field">
-          <%= f.label :profile, "プロフィール" %><br />
-          <%= f.text_area :profile, class: :form__text %>
-        </div>
+          <div class="form-group">
+            <%= f.label :fav_subj, "得意科目" %><br />
+            <%= f.select :fav_subj, [["憲法", "憲法"], ["民法", "民法"], ["刑法", "刑法"]],include_blank: "なし" %>
+          </div>
 
-        <div class="field">
-          <%= f.label :fav_subj, "得意科目" %><br />
-          <%= f.text_field :fav_subj %>
-        </div>
+          <div class="form-group">
+            <%= f.label :weak_subj, "苦手科目" %><br />
+            <%= f.select :weak_subj, [["憲法", "憲法"], ["民法", "民法"], ["刑法", "刑法"]],include_blank: "なし" %>
+          </div>
 
-        <div class="field">
-          <%= f.label :weak_subj, "苦手科目" %><br />
-          <%= f.text_field :weak_subj %>
-        </div>
-
-        <div class="actions">
-          <%= f.submit "新規登録", class: :form__btn  %>
-        </div>
-      <% end %>
-    
-    
+            <%= f.submit "新規登録", class: "px-5 m-3 btn btn-primary btn-lg"  %>
+        <% end %>
+  </div>
 </div>
