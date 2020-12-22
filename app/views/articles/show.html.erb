@@ -21,7 +21,7 @@
             <%= @article.text %>
           </p>
           <div class="text-center ">
-            <%= link_to '削除', article_path, method: :delete, class:'article-destroy' %>
+            <%= link_to '削除', article_path, method: :delete, data: { confirm: '削除しますか？' }, class:'article-destroy' %>
           </div>
         </div>
       </div>
