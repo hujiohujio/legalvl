@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 .title {
   position: relative;
   display: inline-block;
@@ -12,6 +14,7 @@
   color:black;
   text-decoration: none;
   text-align: center;
+  font-family: serif;
 }
 
 .title::after {
@@ -27,7 +30,7 @@
 
 .article-show {
   background-color: #99FFCC;
-  height: 100vh;
+  height: 90vh;
 }
 
 .nav-link {

@@ -1,5 +1,5 @@
 <div class="container-fluid article-show">
-  <div class="row">
+  <div class="row pb-5" style="background-color: #99FFCC;">
     <% if current_user != @article.user %>
       <div class="col-md-3">
         <%= render partial: 'users/profile', locals: { user: @article.user} %>
@@ -29,6 +29,5 @@
     <div class="col">
       <%= render partial: 'messages/message_page', locals: { article: @article, message: @message } %>
     </div>
-
   </div>
 </div>
