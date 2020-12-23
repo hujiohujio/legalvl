@@ -3,6 +3,7 @@
     <h2 class="text-center mb-5">
       <%= "Edit Page" %>
     </h2>
+    <%= render 'devise/shared/error_messages', model: @user %>          
     <table class="table text-break">
       <tbody>
         <div class="text-center my-5">
@@ -13,20 +14,20 @@
           <td class="table-col2"><%= f.file_field :image %></td>
         </tr>
         <tr>
-          <th class="table-col1">名前</th>
+          <th class="table-col1">Nickname</th>
           <td class="table-col2"><%= f.text_field :nickname %></td>
         </tr>
         <tr>
-          <th class="table-col1">プロフィール</th>
+          <th class="table-col1">Profile</th>
           <td class="table-col2"><%= f.text_area :profile %></td>
         </tr>
         <tr>
-          <th class="table-col1">得意科目</th>
-          <td class="table-col2"><%= f.text_area :fav_subj %></td>
+          <th class="table-col1"><%= f.label :fav_subj, "得意科目" %></th>
+          <td class="table-col2"><%= f.select :fav_subj, [["憲法", "憲法"], ["民法", "民法"], ["刑法", "刑法"]],include_blank: "なし" %></td>
         </tr>
         <tr>
-          <th class="table-col1">苦手科目</th>
-          <td class="table-col2"><%= f.text_area :weak_subj %></td>
+          <th class="table-col1"><%= f.label :weak_subj, "苦手科目" %></th>
+          <td class="table-col2"><%= f.select :weak_subj, [["憲法", "憲法"], ["民法", "民法"], ["刑法", "刑法"]],include_blank: "なし" %></td>
         </tr>
       </tbody>
     </table>

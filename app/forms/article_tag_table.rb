@@ -13,7 +13,7 @@ class ArticleTagTable
     article = Article.create(user_id: user_id, text: text, title: title)
     tag = Tag.create(subj: subj)
     ArticleTag.create(article_id: article.id, tag_id: tag.id)
-
+    Message.create(article_id: article.id, user_id: user_id, content: "コメントをよろしくお願いします")
   end
 
 end

@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :new]
+
   def index
     @articles = Article.all.order('created_at DESC').includes(:user)
   end
@@ -11,7 +13,6 @@ class ArticlesController < ApplicationController
     @article = ArticleTagTable.new(article_params)
     if @article.valid?
        @article.save
-      #  保存先の科目のページに行くようにしたい
        return redirect_to root_path
     else
        render "new"

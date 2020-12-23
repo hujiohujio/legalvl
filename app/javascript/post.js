@@ -7,10 +7,15 @@ function post (){
     XHR.responseType = "json";
     XHR.send(formData);
     XHR.onload = () => {
+      if (XHR.status != 200) {
+        alert(`Error ${XHR.status}: ${XHR.statusText}`);
+        return null;          
+      }
       const item = XHR.response.message;
       const contentsArea = document.getElementById("message");
       const articleText = document.getElementById("message_text_field");
-      const date = new Date().toLocaleString({ timeZone: 'Asia/Tokyo' })
+      const date = new Date().toLocaleString({ timeZone: 'Asia/Tokyo' });
+      console.log(contentsArea)
       const HTML = `
         <div class="upper-message">
           <div class="message-user">

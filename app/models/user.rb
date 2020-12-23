@@ -8,6 +8,5 @@ class User < ApplicationRecord
   has_one_attached :image, dependent: :destroy
   
   validates :nickname, presence: true
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
 
 end
