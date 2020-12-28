@@ -96,7 +96,7 @@ EC2にCapistranoを実装し自動デプロイを実現しました。
 ## messages table
 
 | Column                 | Type                    | Options                           |
-|------------------------|-------------------------|----- -----------------------------|
+|------------------------|-------------------------|-----------------------------------|
 | content                | text                    | null: false                       |
 | user                   | references              | null: false, foreign_key: true    |
 | article                | references              | null: false, foreign_key: true    |
