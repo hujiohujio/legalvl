@@ -1,5 +1,5 @@
-<div class="container-fluid vh-100" style="background-color: #99FFCC;">
-  <div class="row" style="background-color: #99FFCC;">
+<div class="container-fluid vh-100 article-show">
+  <div class="row" style="background-image: url("light_veneer.png");">
     <div class="col-2 px-0">
       <div class="nav flex-column nav-pills bg-warning border" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a class="nav-link active border" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
@@ -10,10 +10,16 @@
         <a class="nav-link border" id="v-pills-criminal-procedure-tab" data-toggle="pill" href="#v-pills-criminal-procedure" role="tab" aria-controls="v-pills-criminal-procedure" aria-selected="false">刑事訴訟法</a>
         <a class="nav-link border" id="v-pills-administrative-tab" data-toggle="pill" href="#v-pills-administrative" role="tab" aria-controls="v-pills-administrative" aria-selected="false">行政法</a>
       </div>
+      <h4>科目更新予定</h4>
     </div>
     <div class="col-10">
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+          <div class="jumbotron jumbotron-fluid">
+            <h1 class="display-4">誰とでも簡単に法律の討論を</h1>
+            <p class="lead">今この世の中だからこそ、もっと話そう</p>
+            <p class="lead">自分の意見を自由にぶつけられる場が「りーがるゼミ」</p>
+          </div>            
           <div class="title text-center">
             <h3>新着投稿</h3>
           </div>
@@ -22,7 +28,11 @@
               <% @articles.each do |article| %>
                 <div class="p-3 col-md-3 text-center">
                   <%= link_to (article_path(article.id)) do %>
-                    <%= image_tag(article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") if article.user.image.attached? %>
+                    <% if article.user.image.attached? %>
+                      <%= image_tag(article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+                    <% else %>
+                      <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
+                    <% end %>
                     <div class="card">
                       <div class="card-body bg-light">
                         <%= article.title %>

@@ -14,9 +14,10 @@
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   margin-top: 10px;
 }
+
  
 .article-show {
-  background-color: #99FFCC;
+  background-image: url("light_veneer.png");
   height: 100vh;
 }
 
@@ -61,3 +62,45 @@ div.media-body p {
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
 
 }
+
+h4 {
+  position: relative;
+   margin-top: 2em;
+   padding: 1.5rem 2rem;
+   border-radius: 20px;
+   background: #eee;
+   text-shadow: 0 1px 0 #ccc, 0 3px 0 #ccc, 0 4px 10px rgba(0, 0, 0, .2);
+   font-family: "游ゴシック", "YuGothic";
+   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+ }
+ 
+ h4:before,
+ h4:after {
+   position: absolute;
+   content: '';
+   border-radius: 50%;
+   background: #eee;
+ }
+ 
+ h4:before {
+   right: 30px;
+   top: -15px;
+   width: 30px;
+   height: 30px;
+ }
+ 
+ h4:after {
+   right: 50px;
+   top: -30px;
+   width: 15px;
+   height: 15px;
+ }
+ 
+ .jumbotron {
+  font-family: "游ゴシック", "YuGothic";
+  background-image: url("top_law7.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: 0 1px 0 rgb(58, 21, 21), 0 3px 0 rgb(68, 20, 20), 0 4px 10px rgba(0, 0, 0, .2);
+ }

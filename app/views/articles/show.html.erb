@@ -1,5 +1,5 @@
 <div class="container-fluid article-show">
-  <div class="row pb-5" style="background-color: #99FFCC;">
+  <div class="row pb-5" style="background-image: url("light_veneer.png");">
     <% if current_user != @article.user %>
       <div class="col-md-3">
         <%= render partial: 'users/profile', locals: { user: @article.user} %>

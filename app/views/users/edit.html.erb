@@ -8,7 +8,11 @@
     <table class="table text-break">
       <tbody>
         <div class="text-center my-5">
-          <%= image_tag(@user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") if @user.image.attached? %>
+          <% if @user.image.attached? %>
+            <%= image_tag(@user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+          <% else %>
+            <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
+          <% end %>
         </div>
         <tr>
           <th class="table-col1">アイコン画像</th>
