@@ -3,7 +3,7 @@
     <%= form_with model:@article, url: articles_path, local: true do |f|%>
       <div class="tag-field", id='tag-field'>
         <%= f.label :subj, "科目" %><br />
-        <%= f.select :subj, [["憲法", "憲法"], ["民法", "民法"], ["刑法", "刑法"]],include_blank: "選択して下さい" %>
+        <%= f.select :subj, [["憲法", "憲法"], ["民法", "民法"], ["刑法", "刑法"], ["民事訴訟法", "民事訴訟法"], ["刑事訴訟法", "刑事訴訟法"], ["行政法", "行政法"]],include_blank: "選択して下さい" %>
       </div>
 
       <div class="field">

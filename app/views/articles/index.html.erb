@@ -3,16 +3,19 @@
     <div class="col-2 px-0">
       <div class="nav flex-column nav-pills bg-warning border" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a class="nav-link active border" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-        <a class="nav-link border" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">憲法</a>
-        <a class="nav-link border" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">民法</a>
-        <a class="nav-link border" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">刑法</a>
+        <a class="nav-link border" id="v-pills-constitution-tab" data-toggle="pill" href="#v-pills-constitution" role="tab" aria-controls="v-pills-constitution" aria-selected="false">憲法</a>
+        <a class="nav-link border" id="v-pills-civil-tab" data-toggle="pill" href="#v-pills-civil" role="tab" aria-controls="v-pills-civil" aria-selected="false">民法</a>
+        <a class="nav-link border" id="v-pills-criminal-tab" data-toggle="pill" href="#v-pills-criminal" role="tab" aria-controls="v-pills-criminal" aria-selected="false">刑法</a>
+        <a class="nav-link border" id="v-pills-civil-procedure-tab" data-toggle="pill" href="#v-pills-civil-procedure" role="tab" aria-controls="v-pills-civil-procedure" aria-selected="false">民事訴訟法</a>
+        <a class="nav-link border" id="v-pills-criminal-procedure-tab" data-toggle="pill" href="#v-pills-criminal-procedure" role="tab" aria-controls="v-pills-criminal-procedure" aria-selected="false">刑事訴訟法</a>
+        <a class="nav-link border" id="v-pills-administrative-tab" data-toggle="pill" href="#v-pills-administrative" role="tab" aria-controls="v-pills-administrative" aria-selected="false">行政法</a>
       </div>
     </div>
     <div class="col-10">
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-          <div class="text-center">
-            <h3 class="title my-4">新着投稿</h3>
+          <div class="title text-center">
+            <h3>新着投稿</h3>
           </div>
           <div class="row text-break">
             <% if Article.present? %>
@@ -31,7 +34,10 @@
             <% end %>
           </div>
         </div>
-        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+        <div class="tab-pane fade" id="v-pills-constitution" role="tabpanel" aria-labelledby="v-pills-constitution-tab">
+          <div class="title text-center">
+            <h3>憲法</h3>
+          </div>
           <div class="row text-break">
             <% if Article.present? %>
               <% Tag.where(subj: "憲法").order('created_at DESC').each do |tag| %>
@@ -51,7 +57,10 @@
             <% end %>
           </div>
         </div>
-        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+        <div class="tab-pane fade" id="v-pills-civil" role="tabpanel" aria-labelledby="v-pills-civil-tab">
+          <div class="title text-center">
+            <h3>民法</h3>
+          </div>
           <div class="row text-break">
             <% if Article.present? %>
               <% Tag.where(subj: "民法").order('created_at DESC').each do |tag| %>
@@ -71,10 +80,82 @@
             <% end %>
           </div>
         </div>
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+        <div class="tab-pane fade" id="v-pills-criminal" role="tabpanel" aria-labelledby="v-pills-criminal-tab">
+          <div class="title text-center">
+            <h3>刑法</h3>
+          </div>
           <div class="row text-break">
             <% if Article.present? %>
               <% Tag.where(subj: "刑法").order('created_at DESC').each do |tag| %>
+                <div class="p-3 col-md-4 text-center">
+                    <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
+                      <%= link_to (article_path(article_tag.article.id)) do %>
+                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") if article_tag.article.user.image.attached? %>
+                        <div class="card">
+                          <div class="card-body bg-light text-dark">
+                            <%= article_tag.article.title %>
+                          </div>
+                        </div>
+                      <% end %>
+                    <% end %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-civil-procedure" role="tabpanel" aria-labelledby="v-pills-civil-procedure-tab">
+          <div class="title text-center">
+            <h3>民事訴訟法</h3>
+          </div>
+          <div class="row text-break">
+            <% if Article.present? %>
+              <% Tag.where(subj: "民事訴訟法").order('created_at DESC').each do |tag| %>
+                <div class="p-3 col-md-4 text-center">
+                    <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
+                      <%= link_to (article_path(article_tag.article.id)) do %>
+                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") if article_tag.article.user.image.attached? %>
+                        <div class="card">
+                          <div class="card-body bg-light text-dark">
+                            <%= article_tag.article.title %>
+                          </div>
+                        </div>
+                      <% end %>
+                    <% end %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-criminal-procedure" role="tabpanel" aria-labelledby="v-pills-criminal-procedure-tab">
+          <div class="title text-center">
+            <h3>刑事訴訟法</h3>
+          </div>
+          <div class="row text-break">
+            <% if Article.present? %>
+              <% Tag.where(subj: "刑事訴訟法").order('created_at DESC').each do |tag| %>
+                <div class="p-3 col-md-4 text-center">
+                    <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
+                      <%= link_to (article_path(article_tag.article.id)) do %>
+                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") if article_tag.article.user.image.attached? %>
+                        <div class="card">
+                          <div class="card-body bg-light text-dark">
+                            <%= article_tag.article.title %>
+                          </div>
+                        </div>
+                      <% end %>
+                    <% end %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-administrative" role="tabpanel" aria-labelledby="v-pills-administrative-tab">
+          <div class="title text-center">
+            <h3>行政法</h3>
+          </div>
+          <div class="row text-break">
+            <% if Article.present? %>
+              <% Tag.where(subj: "行政法").order('created_at DESC').each do |tag| %>
                 <div class="p-3 col-md-4 text-center">
                     <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
                       <%= link_to (article_path(article_tag.article.id)) do %>

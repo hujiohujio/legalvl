@@ -34,12 +34,12 @@
 
           <div class="form-group">
             <%= f.label :fav_subj, "得意科目" %><br />
-            <%= f.select :fav_subj, [["憲法", "憲法"], ["民法", "民法"], ["刑法", "刑法"]],include_blank: "なし" %>
+            <%= f.select :fav_subj, [["憲法", "憲法"], ["民法", "民法"], ["刑法", "刑法"], ["民事訴訟法", "民事訴訟法"], ["刑事訴訟法", "刑事訴訟法"], ["行政法", "行政法"]],include_blank: "なし" %>
           </div>
 
           <div class="form-group">
             <%= f.label :weak_subj, "苦手科目" %><br />
-            <%= f.select :weak_subj, [["憲法", "憲法"], ["民法", "民法"], ["刑法", "刑法"]],include_blank: "なし" %>
+            <%= f.select :weak_subj, [["憲法", "憲法"], ["民法", "民法"], ["刑法", "刑法"], ["民事訴訟法", "民事訴訟法"], ["刑事訴訟法", "刑事訴訟法"], ["行政法", "行政法"]],include_blank: "なし" %>
           </div>
 
             <%= f.submit "新規登録", class: "px-5 m-3 btn btn-primary btn-lg"  %>
