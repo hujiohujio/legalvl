@@ -15,6 +15,9 @@
   text-decoration: none;
   text-align: center;
   font-family: serif;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+
+
 }
 
 .title::after {
@@ -26,6 +29,7 @@
   content: '';
   border: 2px dashed #fff;
   border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
+  
 }
 
 .article-show {
@@ -35,11 +39,17 @@
 
 .nav-link {
   color: white;
+
 }
 
 .card-body {
-  
+  font-family: "游ゴシック", "YuGothic";
   color: black;
+}
+
+.card {
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+
 }
 
 
@@ -51,5 +61,20 @@
   margin: 0.8em 0px;
   padding: 0.8em 20px;
   border-radius: 15px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
 }
 
+.img-fluid {
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+
+}
+
+div.media-body h5 {
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+}
+
+
+div.media-body p {
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+
+}

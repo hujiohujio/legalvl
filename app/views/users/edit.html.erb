@@ -1,13 +1,14 @@
-<div class="container-fluid justify-content-center article-show">
-  <%= form_with model: @user, local: true do |f|%>
-    <h2 class="text-center mb-5">
+<div class="container-fluid contents ">
+  <div class="container">
+  <%= form_with model: @user, class: "new_user", local: true do |f|%>
+    <h2>
       <%= "Edit Page" %>
     </h2>
     <%= render 'devise/shared/error_messages', model: @user %>          
     <table class="table text-break">
       <tbody>
         <div class="text-center my-5">
-          <%= image_tag(@user.image.variant(resize: '200x200'), class: "rounded-circle img-fluid") if @user.image.attached? %>
+          <%= image_tag(@user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") if @user.image.attached? %>
         </div>
         <tr>
           <th class="table-col1">アイコン画像</th>
@@ -43,4 +44,7 @@
     </div>
   <% end %>
 </div>
+
+
+
 

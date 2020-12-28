@@ -7,6 +7,7 @@
   right: 32px;
   position: fixed;
   padding: 15px;
+
 }
 
 .purchase-btn-text {
@@ -30,15 +31,22 @@
   border: 1px solid #fe3276;
   border-radius: 50%;
   color: #fff;
-  text-decoration: none;
+  text-decoration: none !important;
   text-align: center;
   bottom: 32px;
   right: 32px;
   position: fixed;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+
+
 }
 .button:hover {
   animation: scale .3s ease-in-out;
 }
 @keyframes scale {
   50% { transform: scale(1.1); }
+}
+
+button {
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
 }

@@ -18,6 +18,9 @@ GitHub:https://github.com/hujiohujio/legalvl
 トップページの新規登録ボタンからユーザー登録を行い、新規投稿作成と編集が行えます
 投稿詳細ページでは投稿物を確認しながらチャット機能によって他のユーザーと意見交換を行うことが可能です
 ユーザー登録を行わなくても、投稿物の閲覧、登録ユーザーのプロフィールの閲覧はできます
+
+- 投稿記事詳細ページでコメントを投稿する様子
+  https://gyazo.com/aca54b9e7a76533cb18752ca5e595567
  
 
 # 目指した課題解決
@@ -28,7 +31,7 @@ GitHub:https://github.com/hujiohujio/legalvl
 # 洗い出した要件　
  
 - ユーザー登録機能
-  - 新規登録、ログイン、ログアウト（未実装）画像登録機能（未実装）
+  - 新規登録、ログイン、ログアウト、画像登録機能
 - 投稿機能
 - チャット機能
   - 非同期通信の実装
@@ -96,7 +99,7 @@ GitHub:https://github.com/hujiohujio/legalvl
 |--------------------|---------------------|-----------------------------------|
 | user               | references          | null: false, foreign_key: true    |
 | text               | text                | null: false                       |
-| titile             | title               | null: false                       |
+| title              | title               | null: false                       |
 
 ### Association
 
@@ -131,4 +134,3 @@ GitHub:https://github.com/hujiohujio/legalvl
 * has_many :article_tags
 
 
-# ローカルでの動作方法
