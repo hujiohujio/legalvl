@@ -1,5 +1,5 @@
-<div class="container-fluid vh-100 article-show">
-  <div class="row">
+<div class="container-fluid  article-show">
+  <div class="row article-contents">
     <div class="col-2 px-0">
       <div class="nav flex-column nav-pills bg-warning border" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a class="nav-link active border" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
@@ -52,16 +52,20 @@
             <% if Article.present? %>
               <% Tag.where(subj: "憲法").order('created_at DESC').each do |tag| %>
                 <div class="p-3 col-md-4 text-center">
-                    <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
-                      <%= link_to (article_path(article_tag.article.id)) do %>
-                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") if article_tag.article.user.image.attached? %>
-                        <div class="card">
-                          <div class="card-body bg-light text-dark">
-                            <%= article_tag.article.title %>
-                          </div>
-                        </div>
+                  <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
+                    <%= link_to (article_path(article_tag.article.id)) do %>
+                      <% if article_tag.article.user.image.attached? %>
+                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+                      <% else %>
+                        <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
                       <% end %>
+                      <div class="card">
+                        <div class="card-body bg-light text-dark">
+                          <%= article_tag.article.title %>
+                        </div>
+                      </div>
                     <% end %>
+                  <% end %>
                 </div>
               <% end %>
             <% end %>
@@ -75,16 +79,20 @@
             <% if Article.present? %>
               <% Tag.where(subj: "民法").order('created_at DESC').each do |tag| %>
                 <div class="p-3 col-md-4 text-center">
-                    <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
-                      <%= link_to (article_path(article_tag.article.id)) do %>
-                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") if article_tag.article.user.image.attached? %>
-                        <div class="card">
-                          <div class="card-body bg-light text-dark">
-                            <%= article_tag.article.title %>
-                          </div>
-                        </div>
+                  <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
+                    <%= link_to (article_path(article_tag.article.id)) do %>
+                      <% if article_tag.article.user.image.attached? %>
+                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+                      <% else %>
+                        <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
                       <% end %>
+                      <div class="card">
+                        <div class="card-body bg-light text-dark">
+                          <%= article_tag.article.title %>
+                        </div>
+                      </div>
                     <% end %>
+                  <% end %>
                 </div>
               <% end %>
             <% end %>
@@ -98,16 +106,20 @@
             <% if Article.present? %>
               <% Tag.where(subj: "刑法").order('created_at DESC').each do |tag| %>
                 <div class="p-3 col-md-4 text-center">
-                    <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
-                      <%= link_to (article_path(article_tag.article.id)) do %>
-                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") if article_tag.article.user.image.attached? %>
-                        <div class="card">
-                          <div class="card-body bg-light text-dark">
-                            <%= article_tag.article.title %>
-                          </div>
-                        </div>
+                  <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
+                    <%= link_to (article_path(article_tag.article.id)) do %>
+                      <% if article_tag.article.user.image.attached? %>
+                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+                      <% else %>
+                        <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
                       <% end %>
+                      <div class="card">
+                        <div class="card-body bg-light text-dark">
+                          <%= article_tag.article.title %>
+                        </div>
+                      </div>
                     <% end %>
+                  <% end %>
                 </div>
               <% end %>
             <% end %>
@@ -121,16 +133,20 @@
             <% if Article.present? %>
               <% Tag.where(subj: "民事訴訟法").order('created_at DESC').each do |tag| %>
                 <div class="p-3 col-md-4 text-center">
-                    <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
-                      <%= link_to (article_path(article_tag.article.id)) do %>
-                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") if article_tag.article.user.image.attached? %>
-                        <div class="card">
-                          <div class="card-body bg-light text-dark">
-                            <%= article_tag.article.title %>
-                          </div>
-                        </div>
+                  <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
+                    <%= link_to (article_path(article_tag.article.id)) do %>
+                      <% if article_tag.article.user.image.attached? %>
+                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+                      <% else %>
+                        <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
                       <% end %>
+                      <div class="card">
+                        <div class="card-body bg-light text-dark">
+                          <%= article_tag.article.title %>
+                        </div>
+                      </div>
                     <% end %>
+                  <% end %>
                 </div>
               <% end %>
             <% end %>
@@ -144,16 +160,20 @@
             <% if Article.present? %>
               <% Tag.where(subj: "刑事訴訟法").order('created_at DESC').each do |tag| %>
                 <div class="p-3 col-md-4 text-center">
-                    <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
-                      <%= link_to (article_path(article_tag.article.id)) do %>
-                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") if article_tag.article.user.image.attached? %>
-                        <div class="card">
-                          <div class="card-body bg-light text-dark">
-                            <%= article_tag.article.title %>
-                          </div>
-                        </div>
+                  <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
+                    <%= link_to (article_path(article_tag.article.id)) do %>
+                      <% if article_tag.article.user.image.attached? %>
+                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+                      <% else %>
+                        <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
                       <% end %>
+                      <div class="card">
+                        <div class="card-body bg-light text-dark">
+                          <%= article_tag.article.title %>
+                        </div>
+                      </div>
                     <% end %>
+                  <% end %>
                 </div>
               <% end %>
             <% end %>
@@ -167,16 +187,20 @@
             <% if Article.present? %>
               <% Tag.where(subj: "行政法").order('created_at DESC').each do |tag| %>
                 <div class="p-3 col-md-4 text-center">
-                    <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
-                      <%= link_to (article_path(article_tag.article.id)) do %>
-                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") if article_tag.article.user.image.attached? %>
-                        <div class="card">
-                          <div class="card-body bg-light text-dark">
-                            <%= article_tag.article.title %>
-                          </div>
-                        </div>
+                  <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
+                    <%= link_to (article_path(article_tag.article.id)) do %>
+                      <% if article_tag.article.user.image.attached? %>
+                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+                      <% else %>
+                        <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
                       <% end %>
+                      <div class="card">
+                        <div class="card-body bg-light text-dark">
+                          <%= article_tag.article.title %>
+                        </div>
+                      </div>
                     <% end %>
+                  <% end %>
                 </div>
               <% end %>
             <% end %>
