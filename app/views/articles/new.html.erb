@@ -1,23 +1,23 @@
-<div class="container-fluid text-center" style="background-color: #99FFCC">
-  <div>
+<div class="contents row">
+  <div class="container">
     <%= form_with model:@article, url: articles_path, local: true do |f|%>
       <div class="tag-field", id='tag-field'>
         <%= f.label :subj, "科目" %><br />
         <%= f.select :subj, [["憲法", "憲法"], ["民法", "民法"], ["刑法", "刑法"], ["民事訴訟法", "民事訴訟法"], ["刑事訴訟法", "刑事訴訟法"], ["行政法", "行政法"]],include_blank: "選択して下さい" %>
       </div>
 
-      <div class="field">
+      <div class="form-group">
         <%= f.label :title, "論点" %><br />
-        <%= f.text_area :title, class: :form__text %>
+        <%= f.text_area :title, class: "form-control", placeholder: "*必須" %>
       </div>
 
-      <div class="field">
+      <div class="form-group">
         <%= f.label :text, "考察" %><br />
-        <%= f.text_area :text, class: :form__text %>
+        <%= f.text_area :text, class: "form-control", placeholder: "*必須" %>
       </div>
 
-      <div class="actions">
-        <%= f.submit "保存する", class: :form__btn  %>
+      <div class="form-group">
+        <%= f.submit "保存する", class: "px-5 m-3 btn btn-primary btn-lg" %>
       </div>
     <% end %>
   </div>

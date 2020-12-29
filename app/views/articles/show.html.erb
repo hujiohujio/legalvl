@@ -1,5 +1,5 @@
 <div class="container-fluid article-show">
-  <div class="row pb-5">
+  <div class="row article-contents">
     <% if current_user != @article.user %>
       <div class="col-md-3">
         <%= render partial: 'users/profile', locals: { user: @article.user} %>

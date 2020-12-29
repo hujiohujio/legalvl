@@ -9,14 +9,12 @@
       <%= render partial: 'messages/message', collection: @messages %>
     </div>
     <% if user_signed_in? %>
-      <div class="messege_form" %>
         <%= form_with model: [article, message], class: 'form', id: "new_article", local: true do |f| %>
           <div class="form-input">
-            <%= f.text_field :content, class: 'form-message', placeholder: 'type a message',id: "message_text_field" %>
+            <%= f.text_area :content, class: 'form-message', placeholder: 'コメントしよう！',id: "message_text_field" %>
           </div>
             <%= f.submit '送信', class: 'form-submit', id: "submit_btn" %>
         <% end %>
-      </div>
     <% end %>
   </div>
 </div>

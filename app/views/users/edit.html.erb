@@ -1,4 +1,4 @@
-<div class="container-fluid contents ">
+<div class="contents row">
   <div class="container">
   <%= form_with model: @user, class: "new_user", local: true do |f|%>
     <h2>
@@ -15,12 +15,12 @@
           <% end %>
         </div>
         <tr>
-          <th class="table-col1">アイコン画像</th>
+          <th class="form-group table-col1">アイコン画像</th>
           <td class="table-col2"><%= f.file_field :image %></td>
         </tr>
         <tr>
           <th class="table-col1">Nickname</th>
-          <td class="table-col2"><%= f.text_field :nickname %></td>
+          <td class="table-col2 "><%= f.text_field :nickname%></td>
         </tr>
         <tr>
           <th class="table-col1">Profile</th>
