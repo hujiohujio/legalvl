@@ -7,9 +7,35 @@
 }
 
 .search-form .search-input {
-  width: 65%;
+  width: 70%;
 }
 
 .search-form .search-btn {
   width: 25%;
+}
+
+.search-btn {
+  position: relative;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+  max-width: 200px;
+  box-sizing: border-box;
+  padding: 10px;
+  background: linear-gradient(135deg, #ffd900, #ff9300);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+  border: 2px solid #ff9300;
+  background: #fff;
+  color: #ff9300;
+}
+.search-btn:hover {
+  background: #ff9300;
+  color: #fff;
+}
+.search-btn:active, .search-btn:focus {
+  top: 2px;
 }

@@ -36,6 +36,14 @@ class ArticlesController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    if params[:keyword].present?
+      @articles = Article.search(params[:keyword]).order('created_at DESC').includes(:user)
+    else
+      redirect_to root_path
+    end
+  end
+
 
 
   private
