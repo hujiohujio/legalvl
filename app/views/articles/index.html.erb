@@ -29,7 +29,7 @@
                 <div class="p-3 col-md-3 text-center">
                   <%= link_to (article_path(article.id)) do %>
                     <% if article.user.image.attached? %>
-                      <%= image_tag(article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+                      <%= image_tag article.user.image, size: "150x150", class: "rounded-circle img-fluid" %>
                     <% else %>
                       <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
                     <% end %>
@@ -55,7 +55,7 @@
                   <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
                     <%= link_to (article_path(article_tag.article.id)) do %>
                       <% if article_tag.article.user.image.attached? %>
-                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+                        <%= image_tag(article_tag.article.user.image, size: "150x150", class: "rounded-circle img-fluid") %>
                       <% else %>
                         <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
                       <% end %>
@@ -82,7 +82,7 @@
                   <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
                     <%= link_to (article_path(article_tag.article.id)) do %>
                       <% if article_tag.article.user.image.attached? %>
-                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+                        <%= image_tag(article_tag.article.user.image, size: "150x150", class: "rounded-circle img-fluid") %>
                       <% else %>
                         <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
                       <% end %>
@@ -109,7 +109,7 @@
                   <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
                     <%= link_to (article_path(article_tag.article.id)) do %>
                       <% if article_tag.article.user.image.attached? %>
-                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+                        <%= image_tag(article_tag.article.user.image, size: "150x150", class: "rounded-circle img-fluid") %>
                       <% else %>
                         <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
                       <% end %>
@@ -136,7 +136,7 @@
                   <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
                     <%= link_to (article_path(article_tag.article.id)) do %>
                       <% if article_tag.article.user.image.attached? %>
-                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+                        <%= image_tag(article_tag.article.user.image, size: "150x150", class: "rounded-circle img-fluid") %>
                       <% else %>
                         <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
                       <% end %>
@@ -163,7 +163,7 @@
                   <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
                     <%= link_to (article_path(article_tag.article.id)) do %>
                       <% if article_tag.article.user.image.attached? %>
-                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+                        <%= image_tag(article_tag.article.user.image, size: "150x150", class: "rounded-circle img-fluid") %>
                       <% else %>
                         <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
                       <% end %>
@@ -190,7 +190,7 @@
                   <% ArticleTag.where(tag_id: tag.id).each do |article_tag| %>
                     <%= link_to (article_path(article_tag.article.id)) do %>
                       <% if article_tag.article.user.image.attached? %>
-                        <%= image_tag(article_tag.article.user.image.variant(resize: '150x150'), class: "rounded-circle img-fluid") %>
+                        <%= image_tag(article_tag.article.user.image, size: "150x150", class: "rounded-circle img-fluid") %>
                       <% else %>
                         <%= image_tag "avatardefault_92824.png", size: "150x150", class: "rounded-circle img-fluid" %>
                       <% end %>

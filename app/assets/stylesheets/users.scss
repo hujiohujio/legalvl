@@ -40,3 +40,32 @@
 div.contents.row .new_user {
   font-family: "游ゴシック", "YuGothic";
 }
+
+
+.registration-info {
+  position: relative;
+  display: inline-block;
+  padding: 0 30px;
+  text-align: center;
+  text-decoration: none !important;
+  color: black;
+}
+
+.registration-info:before,
+.registration-info:after {
+  position: absolute;
+  top: calc(50% - 3px);
+  width: 25px;
+  height: 6px;
+  content: '';
+  border-top: solid 2px #000;
+  border-bottom: solid 2px #000;
+}
+
+.registration-info:before {
+  left: 0;
+}
+
+.registration-info:after {
+  right: 0;
+}

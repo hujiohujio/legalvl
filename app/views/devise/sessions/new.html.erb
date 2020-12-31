@@ -12,7 +12,9 @@
             <%= f.label :password, "パスワード（6文字以上）" %><br />
             <%= f.password_field :password, class: "form-control", placeholder: "※必須" %>
           </div>
-
+          <div>
+          <%= link_to "アカウントをお持ちでない方はこちら", new_user_registration_path, class: "registration-info"%>
+          </div>
             <%= f.submit "ログイン", class: "px-5 m-3 btn btn-primary btn-lg"  %>
         <% end %>
   </div>
