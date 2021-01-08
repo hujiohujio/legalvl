@@ -43,6 +43,7 @@
               <% end %>
             <% end %>
           </div>
+          <%= paginate @articles, theme: 'twitter-bootstrap-4'%>
         </div>
         <div class="tab-pane fade" id="v-pills-constitution" role="tabpanel" aria-labelledby="v-pills-constitution-tab">
           <div class="title text-center">
@@ -213,6 +214,7 @@
 <%= link_to(new_article_path, class: 'button') do %>
   <span class='purchase-btn-text text-light'>投　稿</span>
 <% end %>
+
 
 
 
