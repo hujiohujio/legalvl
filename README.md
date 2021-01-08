@@ -45,7 +45,6 @@ GitHub:https://github.com/hujiohujio/legalvl
 - ブックマーク機能
 - いいね機能
 - チャット通知機能
-- ページネーション機能
 
 
 # 使用技術
